@@ -20,7 +20,7 @@ const TabComponent = () => {
   ];
 
   return (
-    <div className="md:w-[90%]   p-10 mx-auto mt-10">
+    <div className="md:w-[90%]   p-1 md:p-10 mx-auto mt-10">
       {/* Tabs */}
       <div className="flex border-b bg-white p-2 rounded-md border-gray-200">
         {tabs.map((tab, index) => (
@@ -41,10 +41,10 @@ const TabComponent = () => {
       </div>
 
       {/* Tab Content */}
-      <div className="p-9 bg-white  shadow-lg text-center  md:text-2xl text-xl font-bold text-white  mt-4">
-        <p className="text-gray-700">{tabs[activeTab].content}</p>
+      <div className="p-9 bg-white shadow-lg text-center   md:text-2xl text-xl font-bold   mt-4">
+        <p className=" shadow-2xl md:text-4xl ">{tabs[activeTab].content}</p>
         <Link to="/login">
-          <button className=" p-4 mt-6  px-4 bg-gradient-to-r from-cyan-300 to-green-300 shadow-2xl">
+          <button className="p-4 mt-6 px-4 bg-gradient-to-r from-cyan-300 to-green-300 shadow-2xl animate-pulse">
             {tabs[activeTab].button}
           </button>
         </Link>

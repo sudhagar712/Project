@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css"; // Import AOS CSS
 
 const JobScheduler = () => {
   const [selectedFrequency, setSelectedFrequency] = useState("");
@@ -8,6 +10,14 @@ const JobScheduler = () => {
     weekly: "",
     monthly: "",
   });
+
+  // Initialize AOS when the component mounts
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // Optional: duration of the animation
+      easing: "ease-in-out", // Optional: easing function
+    });
+  }, []);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -19,7 +29,7 @@ const JobScheduler = () => {
   };
 
   return (
-    <div className="min-h-screen p-6 bg-gray-50">
+    <div className="min-h-screen p-3 bg-gray-50">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
         {/* Left Side: Form */}
         <div className="lg:col-span-4 bg-white shadow-md rounded-lg p-6">
@@ -130,6 +140,7 @@ const JobScheduler = () => {
             src="https://blog.zoho.com/sites/zblogs/images/people/new-2019-01.gif"
             alt="Placeholder"
             className="rounded-lg shadow-md w-full lg:w-auto"
+            data-aos="fade-up" // AOS attribute to apply animation
           />
         </div>
       </div>

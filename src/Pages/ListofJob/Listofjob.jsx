@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css"; // Import AOS CSS
 
 const Listofjob = () => {
   const [formData, setFormData] = useState({
@@ -8,6 +10,14 @@ const Listofjob = () => {
     endTime: "",
     statusCheck: false,
   });
+
+
+   useEffect(() => {
+     AOS.init({
+       duration: 1000, // Optional: duration of the animation
+       easing: "ease-in-out", // Optional: easing function
+     });
+   }, []);
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -32,10 +42,12 @@ const Listofjob = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 md:p-10 ">
+    <div className="min-h-screen bg-gray-50 md:p-10 p-2 ">
       {/* Header */}
       <div className="mb-6 text-center">
-        <h1 className="text-xl md:text-3xl  font-bold bg-white shadow-lg p-3">List of Jobs</h1>
+        <h1 className="text-xl md:text-3xl  font-bold bg-white shadow-lg p-3">
+          List of Jobs
+        </h1>
       </div>
 
       {/* Grid Layout */}
@@ -45,6 +57,7 @@ const Listofjob = () => {
           <img
             src="https://images.pexels.com/photos/68761/pexels-photo-68761.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
             alt="Job Illustration"
+            data-aos="fade-right"
             className="rounded-lg shadow-md w-full"
           />
         </div>
