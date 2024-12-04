@@ -38,7 +38,7 @@ const JobScheduler = () => {
           </h2>
 
           {/* Options */}
-          <div className="space-y-4">
+          <div className="space-y-12">
             {/* Run Now */}
             <div className="flex items-center">
               <button
@@ -50,14 +50,14 @@ const JobScheduler = () => {
                 ▶
               </button>
               <label className="ml-4 text-gray-700 font-medium">Run Now</label>
-              <input
+              {/* <input
                 type="text"
                 name="runNow"
                 value={inputs.runNow}
                 onChange={handleInputChange}
                 className="ml-auto px-3 py-2 border rounded-lg w-20"
                 disabled={selectedFrequency !== "runNow"}
-              />
+              /> */}
             </div>
 
             {/* Hourly */}
@@ -69,19 +69,19 @@ const JobScheduler = () => {
                 value="hourly"
                 checked={selectedFrequency === "hourly"}
                 onChange={() => handleFrequencySelect("hourly")}
-                className="mr-2"
+                className="mr-2 "
               />
               <label htmlFor="hourly" className="text-gray-700 font-medium">
                 Hourly
               </label>
-              <input
+              {/* <input
                 type="text"
                 name="hourly"
                 value={inputs.hourly}
                 onChange={handleInputChange}
                 className="ml-auto px-3 py-2 border rounded-lg w-20"
                 disabled={selectedFrequency !== "hourly"}
-              />
+              /> */}
             </div>
 
             {/* Weekly */}
@@ -98,14 +98,14 @@ const JobScheduler = () => {
               <label htmlFor="weekly" className="text-gray-700 font-medium">
                 Weekly
               </label>
-              <input
+              {/* <input
                 type="text"
                 name="weekly"
                 value={inputs.weekly}
                 onChange={handleInputChange}
                 className="ml-auto px-3 py-2 border rounded-lg w-20"
                 disabled={selectedFrequency !== "weekly"}
-              />
+              /> */}
             </div>
 
             {/* Monthly */}
@@ -122,14 +122,14 @@ const JobScheduler = () => {
               <label htmlFor="monthly" className="text-gray-700 font-medium">
                 Monthly
               </label>
-              <input
+              {/* <input
                 type="text"
                 name="monthly"
                 value={inputs.monthly}
                 onChange={handleInputChange}
                 className="ml-auto px-3 py-2 border rounded-lg w-20"
                 disabled={selectedFrequency !== "monthly"}
-              />
+              /> */}
             </div>
           </div>
         </div>
@@ -140,7 +140,7 @@ const JobScheduler = () => {
             src="https://blog.zoho.com/sites/zblogs/images/people/new-2019-01.gif"
             alt="Placeholder"
             className="rounded-lg shadow-md w-full lg:w-auto"
-            data-aos="fade-up" // AOS attribute to apply animation
+            data-aos="fade-up"
           />
         </div>
       </div>
