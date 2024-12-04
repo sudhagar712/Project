@@ -20,7 +20,7 @@ const TabComponent = () => {
   ];
 
   return (
-    <div className="md:w-[90%]   p-1 md:p-10 mx-auto mt-10">
+    <div className="md:w-[40%]   p-1 md:p-10 mx-auto mt-10">
       {/* Tabs */}
       <div className="flex border-b bg-white p-2 rounded-md border-gray-200">
         {tabs.map((tab, index) => (
