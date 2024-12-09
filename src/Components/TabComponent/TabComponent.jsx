@@ -1,53 +1,58 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+
 
 const TabComponent = () => {
-  const [activeTab, setActiveTab] = useState(0);
-
-  const tabs = [
-    {
-      id: 0,
-      label: "Job schedule",
-      content: "Welcome to Login",
-      button: "GET STARTED",
-    },
-    {
-      id: 1,
-      label: " List of jobs",
-      content: "Welcome to Login",
-      button: "GET STARTED",
-    },
-  ];
+  const [activeTab, setActiveTab] = useState("jobSchedule");
 
   return (
-    <div className="md:w-[40%]   p-1 md:p-10 mx-auto mt-10">
-      {/* Tabs */}
-      <div className="flex border-b bg-white p-2 rounded-md border-gray-200">
-        {tabs.map((tab, index) => (
-          <button
-            key={tab.id}
-            className={`flex-1 text-center py-2 px-4 ${
-              activeTab === tab.id
-                ? index === 0
-                  ? "border-b-2 border-white border-2 bg-cyan-200 md:text-2xl  shadow-xl font-extrabold  text-white"
-                  : "border-b-2 border-white border-2 bg-green-200 md:text-2xl shadow-xl font-extrabold  text-white"
-                : "text-black md:text-2xl  font-bold"
-            }`}
-            onClick={() => setActiveTab(tab.id)}
-          >
-            {tab.label}
-          </button>
-        ))}
+    <div className="md:w-[100%] md:p-10 p-2 mx-auto mt-10 bg-white   rounded-lg shadow-lg">
+      {/* Tabs Header */}
+      <div className="flex border-b border-gray-200 p-10 bg-gray-500 rounded-t-lg">
+        <button
+          className={`flex-1 py-3 text-center ${
+            activeTab === "jobSchedule"
+              ? "border-b-2 border-white text-black font-semibold "
+              : "text-white "
+          }`}
+          onClick={() => setActiveTab("jobSchedule")}
+        >
+          Job Schedule
+        </button>
+        <button
+          className={`flex-1 py-3 text-center ${
+            activeTab === "jobList"
+              ? "border-b-2 border-white text-black font-semibold"
+              : "text-white"
+          }`}
+          onClick={() => setActiveTab("jobList")}
+        >
+          List of Jobs
+        </button>
       </div>
 
-      {/* Tab Content */}
-      <div className="p-9 bg-white shadow-lg text-center   md:text-2xl text-xl font-bold   mt-4">
-        <p className=" shadow-2xl md:text-4xl ">{tabs[activeTab].content}</p>
-        <Link to="/login">
-          <button className="p-4 mt-6 px-4 bg-gradient-to-r from-cyan-300 to-green-300 shadow-2xl animate-pulse">
-            {tabs[activeTab].button}
-          </button>
-        </Link>
+      {/* Tabs Content */}
+      <div className="p-6 bg-white border border-gray-300 border-t-0 rounded-b-lg">
+        {activeTab === "jobSchedule" && (
+          <div>
+            <h2 className="text-xl font-semibold text-blue-600">
+              Job Schedule
+            </h2>
+            <p className="text-gray-700 mt-2">
+             <Listofjob />
+            </p>
+          </div>
+        )}
+        {activeTab === "jobList" && (
+          <div>
+            <h2 className="text-xl font-semibold text-blue-600">
+              List of Jobs
+            </h2>
+            <p className="text-gray-700 mt-2">
+              Content for List of Jobs goes here. Add dynamic data here if
+              needed.
+            </p>
+          </div>
+        )}
       </div>
     </div>
   );

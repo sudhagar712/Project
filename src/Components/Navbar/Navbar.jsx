@@ -5,51 +5,51 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav className=" border-2 border-white bg-gradient-to-r from-cyan-300 to-green-300 shadow-xl">
+    <nav className=" border-2 border-white md:bg-gray-500 bg-gray-300  shadow-xl">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Left: Logo */}
           <a href="/" className="flex items-center">
-            <img src={logo} alt="Logo" className="h-15 w-[120px]" />
-            <span className="ml-2 text-2xl font-bold  text-white">
+            <img src={logo} alt="Logo" className="h-15 w-[130px]" />
+            <span className="ml-2 md:text-5xl text-xl font-bold  text-white">
               ABC <span className="text-black">NXT</span>
             </span>
           </a>
 
           {/* Center: Navigation Items */}
-          <div className="hidden md:flex space-x-5">
+          <div className="hidden md:flex space-x-12">
             <a
               href="/listofjob"
-              className="text-sm font-medium transition duration-300 "
+              className="text-md text-white font-bold transition duration-300 "
             >
               JOB
             </a>
             <a
               href="#services"
-              className="text-sm font-medium transition duration-300 "
+              className="text-md text-white font-bold transition duration-300 "
             >
               SERVICES
             </a>
             <a
               href="#contact"
-              className="text-sm  font-medium transition duration-300 "
+              className="text-md  text-white font-bold transition duration-300 "
             >
               CONTACT-US
             </a>
           </div>
 
           {/* Right: Login Button */}
-          <div className="hidden md:block">
+          {/* <div className="hidden md:block">
             <a
               href="#login"
               className="px-4 py-2 bg-green-400 text-white rounded-md shadow-lg  transition duration-300"
             >
               Welcome To Our Site!!
             </a>
-          </div>
+          </div> */}
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden">
+          <div className="md:hidden  ">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="text-gray-800 focus:outline-none"
@@ -78,22 +78,22 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden mt-2 space-y-2">
+          <div className="md:hidden mt-5 p-5 bg-gray-500 shadow-lg  space-y-5 ">
             <a
               href="#home"
-              className="block text-gray-600 hover:text-blue-500 transition duration-300"
+              className="block hover:text-white font-bold text-sm hover:underline  text-center transition duration-300"
             >
               JOB
             </a>
             <a
               href="#services"
-              className="block text-gray-600 hover:text-blue-500 transition duration-300"
+              className="block hover:text-white font-bold text-sm hover:underline text-center  transition duration-300"
             >
               Services
             </a>
             <a
               href="#contact"
-              className="block text-gray-600 hover:text-blue-500 transition duration-300"
+              className="block hover:text-white font-bold text-sm hover:underline text-center transition duration-300"
             >
               Contact
             </a>
