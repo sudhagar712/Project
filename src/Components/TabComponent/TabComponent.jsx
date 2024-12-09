@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Listofjob from "../../Pages/ListofJob/Listofjob";
 
 
 const TabComponent = () => {
@@ -37,9 +38,9 @@ const TabComponent = () => {
             <h2 className="text-xl font-semibold text-blue-600">
               Job Schedule
             </h2>
-            <p className="text-gray-700 mt-2">
-             <Listofjob />
-            </p>
+           <div>
+            <Listofjob/>
+           </div>
           </div>
         )}
         {activeTab === "jobList" && (
